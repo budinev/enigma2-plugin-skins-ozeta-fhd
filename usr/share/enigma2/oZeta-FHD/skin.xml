@@ -1,17 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <skin>
-	<!-- Skin oZeta-FHD by mmark v1.0.0 	     -->
-	<!-- released for use on all Open images     -->
-	<!-- Currently support OpenPli v8.0          -->
+	<!-- **************************************  -->
+	<!-- Skin oZeta-FHD by mmark v1.2.0 	     -->
+	<!-- released for use on Open images         -->
+	<!-- Currently Tested on ATV v8.X            -->
+	<!-- Currently Tested on PLI v8.X            -->
 	<!-- Don't Remove this Disclaimer            -->
-	<!-- Release  v.1.0.0 05/02/2021             -->
+	<!-- Release  v.1.2.0 22/02/2021             -->
 	<!-- **************************************  -->
 	<copyright>
 		<abouth name="oZeta-FHD"> 
 			author="mmark" 
 			license="Open" 
 			Support="All Open Images" 
-			Release="1.0.0 05/02/2021" 
+			Release="1.2.0 20/02/2021" 
 			supporturl="http://e2skin.blogspot.com" 
 		</abouth>
 	</copyright>
@@ -185,7 +187,357 @@
 	<include filename="skin_plugins.xml"/>
 
 	<screen name="SubtitleDisplay" position="fill" backgroundColor="transparent" zPosition="-1" flags="wfNoBorder"/>
+      	<!-- *************************************** -->
+  	<!--   SATLODGE PANELS * SATLODGE PANESS *   -->
+  	<!-- **************************************  -->
+	
+	<screen name="all" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" >
+		<panel name="LayerMenu1500" />
+		<panel name="cRG"/>
+		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
+		<widget name="maintener" position="230,150" zPosition="3" size="1250,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="text" position="230,210" size="1250,700" itemHeight="230" foregroundColor="#ffffff" foregroundColorSelected="#ffffff" backgroundColorSelected="barColor" scrollbarMode="showOnDemand" zPosition="2" />
+		<widget name="info" position="230,910" size="1250,50" font="Regular;30" foregroundColor="#7fff00" transparent="1" zPosition="4" />
+                <eLabel name="DEBUG" text="P-001" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
 
+
+	<screen name="Downloader" position="center,200" size="900,210" title="Downloader...">
+		<ePixmap position="10,10" size="100,100" pixmap="icons/ipkg.png" alphatest="blend" scale="1" zPosition="-2" />
+		<widget name="info2" position="130,20"  size="750,40" font="Regular;32" halign="center" foregroundColor="yellow"  backgroundColor="#000000" transparent="1" />
+		<widget name="info"  position="130,90"  size="750,70" font="Regular;30" halign="center" valign="bottom" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" />
+		<eLabel                                 position="10,170" size="880,20" backgroundColor="#202020" transparent="0" zPosition="0" />
+		<widget name="progress"                 position="10,170" size="880,20" borderWidth="1" borderColor="#cccccc" zPosition="1" />
+                <eLabel name="DEBUG" text="P-002" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+	<screen name="DownloaderImage" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<panel name="cRG"/>
+		<widget name="maintener" position="230,150" zPosition="3" size="1250,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<widget name="menu" position="230,210" size="1250,700" foregroundColor="#ffffff" foregroundColorSelected="#fffff" backgroundColorSelected="barColor" scrollbarMode="showOnDemand" scrollbarWidth="10" zPosition="2" />
+		<widget name="info" position="230,910" size="1250,50" font="Regular;30" foregroundColor="#7fff00" transparent="1" zPosition="4" />
+		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
+                <eLabel name="DEBUG" text="P-003" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+
+	<screen name="downloadTask" position="center,730" size="1910,350" backgroundColor="#00060606" >			
+		<widget name="title" position="0,10" size="1920,34" zPosition="5" valign="center" halign="center" font="Regular;32" transparent="1" foregroundColor="#ff0000" shadowColor="black" shadowOffset="-1,-1" />
+		<widget source="tasklist" render="Listbox" position="0,45" size="1920,180" zPosition="7" scrollbarMode="showOnDemand" transparent="1" scrollbarWidth="10" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (20,1), size = (1280, 34), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 1 is the name
+					MultiContentEntryText(pos = (1030, 1), size = (200, 34), font=1, flags = RT_HALIGN_RIGHT, text = 2), # index 2 is the state
+					MultiContentEntryProgress(pos = (1240, 1), size = (200, 34), percent = -3), # index 3 should be progress
+					MultiContentEntryText(pos = (1450, 1), size = (300, 34), font=1, flags = RT_HALIGN_LEFT, text = 4), # index 4 is the percentage
+					],
+					"fonts": [gFont("Regular", 32),gFont("Regular", 32)],
+					"itemHeight": 36
+				}
+			</convert>
+		</widget>
+		<eLabel position="center,235" zPosition="4" size="1920,34" halign="center" font="Regular;32" transparent="1" foregroundColor="#ffff00" backgroundColor="#41000000" text="Press EXIT to return to previous page," />
+		<eLabel position="center,265" zPosition="4" size="1920,34" halign="center" font="Regular;32" transparent="1" foregroundColor="#ffff00" backgroundColor="#41000000" text="   without to cancel the download !" />		
+                <eLabel name="DEBUG" text="P-004" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+
+	<screen name="FEEDmodel" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<panel name="cRG"/>
+		<widget name="maintener" position="230,150" zPosition="3" size="1250,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<widget name="list" position="230,210" size="1250,700" foregroundColor="#ffffff" foregroundColorSelected="#fffff" backgroundColorSelected="barColor" scrollbarMode="showOnDemand" transparent="1" scrollbarWidth="10" zPosition="2" />
+		<widget name="info" position="230,910" size="1250,50" font="Regular;30" foregroundColor="#7fff00" transparent="1" zPosition="4" />
+		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
+                <eLabel name="DEBUG" text="P-005" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+
+	<!-- SatLodge Panel -->
+	<screen name="Homesl" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0" >
+		<panel name="LayerMenu1000" />
+		<panel name="cvRGYB"/>
+		<widget name="text" position="230,150" size="810,800" itemHeight="40" foregroundColor="#ffffff" foregroundColorSelected="#ffffff" backgroundColorSelected="barColor" 
+			scrollbarMode="showOnDemand" scrollbarWidth="10" transparent="1" zPosition="2" />
+                <eLabel name="DEBUG" text="P-006" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="1" zPosition="1000" />
+	</screen>
+
+
+	<screen name="ImageDownloader" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<panel name="cRGYB"/>
+		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
+		<widget name="maintener" position="230,150" zPosition="3" size="1250,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget source="menu" render="Listbox" position="230,220" size="1250,250" zPosition="3" transparent="1" foregroundColor="#ffff00" foregroundColorSelected="#ffffff" backgroundColorSelected="#000000" scrollbarMode="showNever" scrollbarWidth="10">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (10, 2), size = (1230, 50), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), # index 0 is the MenuText,
+					],
+					"fonts": [gFont("Regular", 40)],
+					"itemHeight": 50
+				}
+			</convert>
+		</widget>
+		<eLabel position="230,480" size="1250,3" backgroundColor="#202020" />
+		<widget source="menu" render="Listbox" position="230,490" size="1250,200" zPosition="4" scrollbarMode="showNever" selectionDisabled="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+					MultiContentEntryText(pos = (0, 3), size = (1250, 200), flags = RT_HALIGN_CENTER|RT_VALIGN_TOP|RT_WRAP, text = 2), # index 0 is the MenuText,
+					],
+					"fonts": [gFont("Regular", 34)],
+					"itemHeight": 150
+				}
+			</convert>
+		</widget>
+		<widget source="targettext"   render="Label" position="230,700" size="800,100" valign="center" halign="center"  font="Regular;28" transparent="1" zPosition="3" foregroundColor="#ffff00" />
+		<widget name="target"                        position="230,800" size="800,100" valign="center" halign="center"  font="Regular;28" transparent="1" zPosition="4" />
+		<widget source="downloadtext" render="Label" position="230,900" size="1000,100" valign="center" halign="center" font="Regular;28" transparent="1" zPosition="3" foregroundColor="#ff6a6a" />
+                <eLabel name="DEBUG" text="P-007" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+	
+	
+	<screen name="ImageDownloaderFiles" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<panel name="cRGB"/>
+		<widget name="maintener" position="230,150" zPosition="3" size="1250,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="menu" position="230,220" size="1250,640" foregroundColor="#ffffff" itemHeight="40" foregroundColorSelected="#ffffff" backgroundColorSelected="barColor" scrollbarMode="showOnDemand" scrollbarWidth="10" zPosition="2" />
+		<widget name="info" position="230,910" size="1250,50" font="Regular;30" foregroundColor="#7fff00" transparent="1" zPosition="4" />
+		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
+                <eLabel name="DEBUG" text="P-008" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+
+	<screen name="ImageDownloadLocation" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<panel name="cRG"/>
+		<widget name="maintener" position="230,150" zPosition="3" size="1250,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="filelist" position="230,220" size="1250,400" itemHeight="40" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" backgroundColorSelected="#b8b8b8" scrollbarMode="showOnDemand" scrollbarWidth="10" zPosition="2" />
+		<widget source="text" render="Label" position="230,680" size="1250,100" valign="center" halign="center" font="Regular;36" transparent="1" zPosition="3" foregroundColor="#ffff00" />
+		<widget name="target" position="230,780" size="1250,100" valign="center" halign="center" font="Regular;36" transparent="1" zPosition="4" />
+		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
+                <eLabel name="DEBUG" text="P-009" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+
+	<screen name="slInstallGo" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<panel name="cRG"/>
+		<widget name="text" itemHeight="230" position="150,150" size="1250,680" foregroundColor="#ffffff" scrollbarMode="showOnDemand" scrollbarWidth="10" zPosition="2" />
+		<widget name="info" position="230,830" zPosition="4" size="1250,60" font="Regular;32" foregroundColor="#7fff00" transparent="1" />
+		<widget source="progress" render="Progress"  position="230,910" size="700,40" transparent="1" borderWidth="0" zPosition="1" />
+		<widget source="progresstext" render="Label" position="240,910" size="700,40" font="Regular;30" halign="right" transparent="1" foregroundColor="#00cc99" backgroundColor="#000000" zPosition="2" />
+                <eLabel name="DEBUG" text="P-0010" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+
+	<!-- SatLodge IPKList -->
+	<screen name="IPKinst" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<panel name="cRGB"/>
+		<widget name="text" position="230,150" font="Regular;30" size="1250,200" itemHeight="40" halign="center" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" backgroundColorSelected="#b8b8b8" 
+			scrollbarWidth="10" zPosition="2" />
+		<eLabel position="230,360" size="1250,3" backgroundColor="#202020" />
+		<widget name="info1" position="230,370" zPosition="3" size="1250,90" font="Regular;34" foregroundColor="#ffffff" backgroundColor="#202020" transparent="0" halign="center" />
+		<eLabel position="230,470" size="1250,3" backgroundColor="#202020" />
+		<widget source="ipkglisttmp" render="Listbox" position="230,480" size="1250,200" itemHeight="40" font="Regular;30" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" backgroundColorSelected="#b8b8b8" scrollbarWidth="10" transparent="1" zPosition="2">
+			<convert type="StringList" />
+		</widget>
+		<widget name="info" halign="left" position="230,700" zPosition="3" size="900,50" font="Regular;32" foregroundColor="#ffffff" transparent="1" />
+                <eLabel name="DEBUG" text="P-011" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="" zPosition="1000" />
+	</screen>
+
+
+	<screen name="pluginSl" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Uninstaller::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<panel name="cRGY"/>
+		<widget name="info" position="230,150" zPosition="3" size="1250,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="list" position="230,220" size="1250,640" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" backgroundColorSelected="#b8b8b8" scrollbarMode="showOnDemand" transparent="1" scrollbarWidth="10" zPosition="2" />  
+		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
+                <eLabel name="DEBUG" text="P-012" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+
+	<screen name="SERVERmodel" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<panel name="cRG"/>
+		<widget name="maintener" position="230,150" zPosition="3" size="1250,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="list" position="230,220" size="1250,640" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" backgroundColorSelected="#b8b8b8" scrollbarMode="showOnDemand" transparent="1" scrollbarWidth="10" zPosition="2" />  
+		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
+                <eLabel name="DEBUG" text="P-013" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+
+	<screen name="slConsole" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Console::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<widget name="maintener" position="230,150" zPosition="3" size="1250,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="text" position="230,220" size="1250,640" font="Regular;28" foregroundColor="#ffffff" zPosition="2" />  
+		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
+		<ePixmap position="230,980" size="500,90" pixmap="oZeta-FHD/picmenu/bLogo.png" alphatest="blend" zPosition="1" />
+                <eLabel name="DEBUG" text="P-014" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+
+	<screen name="slPanelConfig" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1500" />
+		<panel name="cRG"/>
+		<widget name="maintener" position="230,150" zPosition="3" size="1250,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="config" position="230,220" size="1250,500" itemHeight="50" font="Regular;36" foregroundColor="white" transparent="1" zPosition="3" />
+		<widget name="info"   position="230,790" size="1250,80" font="Regular;30" foregroundColor="#7fff00" backgroundColor="black" transparent="1" halign="center" zPosition="3" />
+		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
+                <eLabel name="DEBUG" text="P-015" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+
+
+	<!-- SatLodge Images -->
+	<screen name="STBmodel" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1000" />
+		<panel name="cRG"/>
+		<widget name="list" position="230,150" size="810,640" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" itemHeight="40" backgroundColorSelected="#b8b8b8" scrollbarMode="showOnDemand" 
+			scrollbarWidth="10" transparent="1" zPosition="2" />
+                <eLabel name="DEBUG" text="P-016" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="1" zPosition="1000" />
+	</screen>
+
+
+
+
+
+
+
+
+
+	<screen name="EPGCacheSetupScreen" flags="wfNoBorder" position="0,0" size="1920,1080" title="EPG Cache" backgroundColor="#ffffffff" zPosition="-1" >
+		<panel name="LayerMenu1000" />
+		<panel name="cRGYB"/>
+		<widget source="epgcachelocation" render="Label" position="230,150" zPosition="3" size="810,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="config" position="230,210" size="810,680" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" itemHeight="40" backgroundColorSelected="#b8b8b8" scrollbarMode="showOnDemand" 
+			scrollbarWidth="10" transparent="1" zPosition="2" />
+	</screen>
+
+	<screen name="SetupZapSelectorScreen" flags="wfNoBorder" position="0,0" size="1920,1080" title="ZapSelector" backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<widget name="config" position="230,150" size="810,760" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" itemHeight="40" backgroundColorSelected="#b8b8b8" scrollbarMode="showOnDemand" 
+			scrollbarWidth="10" transparent="1" zPosition="2" />
+		<ePixmap position="230,1015"   pixmap="oZeta-FHD/buttons/button_red.png" size="30,30" alphatest="blend" zPosition="2" />
+                <eLabel  text="Cancel" position="270,1013" size="200,34" font="Regular;30" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" zPosition="1" />
+		<ePixmap position="230,1015"  pixmap="oZeta-FHD/buttons/button_green.png" size="30,30" alphatest="blend" zPosition="2" />
+                <eLabel  text="Ok" position="270,1013" size="200,34" font="Regular;30" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" zPosition="1" />
+		<ePixmap position="520,1015"  pixmap="oZeta-FHD/buttons/button_blue.png" size="30,30" alphatest="blend" zPosition="2" />
+                <eLabel  text="Clear" position="560,101" size="200,34" font="Regular;30" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" zPosition="1" />
+	</screen>
+
+	<screen name="SetPiconPath" flags="wfNoBorder" position="0,0" size="1920,1080" title="PiconPath" backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<panel name="LayerMenu1000" />
+		<panel name="cRG"/>
+		<widget name="config" position="230,210" size="810,680" font="Regular;28" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" itemHeight="40" backgroundColorSelected="#b8b8b8" scrollbarMode="showOnDemand" 
+			scrollbarWidth="10" transparent="1" zPosition="2" />
+	</screen>
+
+	<screen name = "piconPath" position="center,center" size="560,320" title="Select path for Picons">
+		<panel name="LayerMenu1000" />
+		<panel name="cRG"/>
+		<widget name="target" position="230,150" zPosition="3" size="810,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="filelist" position="230,210" size="810,680" font="Regular;28" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" itemHeight="40" backgroundColorSelected="barColor" scrollbarMode="showOnDemand" 
+			scrollbarWidth="10" transparent="1" zPosition="2" />
+	</screen>
+
+	<screen name="slManager" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="#41000000" title="..:: Sat-Lodge Cam Manager ::..">
+		<panel name="LayerMenu1500" />
+		<panel name="cRGYB"/>
+		<widget name="ecminfo" position="230,150" zPosition="4" size="550,50" font="Regular; 34" foregroundColor="#ffcc33" transparent="1" halign="left"  valign="center" /> 
+		<widget name="desc"    position="720,150" zPosition="4" size="750,50" font="Regular; 34" foregroundColor="#ffcc33" backgroundColorSelected="barColor" transparent="1" halign="right" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="info"    position="230,220" zPosition="4" size="550,646" font="Regular; 34" foregroundColor="white" transparent="1" halign="left" valign="top" />
+		<widget name="list"    position="790,220" zPosition="3" size="780,557" scrollbarMode="showOnDemand" transparent="1" foregroundColorSelected="#cc0000" foregroundColor="#999999" backgroundColorSelected="barColor" scrollbarWidth="10" halign="right" />
+		<widget name="team"      position="230,910"  zPosition="3" size="1250,66" font="Regular;30" foregroundColor="#ffcc33" backgroundColor="black" transparent="1" halign="center" />
+	</screen>
+
+	<screen name="GetipkLs" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="#41000000" title="..:: Sat-Lodge Cam Manager ::..">
+		<panel name="LayerMenu1500" />
+		<widget name="info" position="230,150" size="1250,50" font="Regular;30" halign="center" valign="center" foregroundColor="yellow" backgroundColor="black" transparent="1" zPosition="4" />
+		<widget name="text" position="230,210" size="1250,600" scrollbarMode="showOnDemand" transparent="1" foregroundColorSelected="#cc0000" foregroundColor="#999999" backgroundColorSelected="barColor" scrollbarWidth="10" halign="right" />
+		<widget name="team" position="230,850" size="1250,80" font="Regular;40" foregroundColor="#ffcc33" backgroundColor="black" transparent="1" halign="center" zPosition="3" />
+		<ePixmap position="230,980" size="500,90" pixmap="oZeta-FHD/picmenu/bLogo.png" alphatest="blend" zPosition="1" />
+	</screen>
+
+	<screen name="GetipklistLs" position="0,0" size="1920,1080" flags="wfNoBorder" backgroundColor="#41000000" title="..:: Sat-Lodge Cam Manager ::..">
+		<panel name="GetipkLs" />
+	</screen>
+
+	<screen name="MainSetting" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::TiVuStream Panel Settings Manager::.." backgroundColor="#ff000000">
+		<panel name="LayerMenu1500" />
+		<panel name="cRG"/>
+		<widget name="info" position="230,150" zPosition="3" size="810,50" font="Regular;30" backgroundColor="#202020" transparent="0" foregroundColor="yellow" halign="center" valign="center" />
+		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
+		<widget name="text" position="230,220" size="1250,600" itemHeight="50" scrollbarMode="showOnDemand" foregroundColor="#7ac2fc" foregroundColorSelected="#f4b700" scrollbarWidth="10" transparent="1" zPosition="1" />
+		<widget name="pth"   position="230,840" size="1250,50" font="Regular;28" foregroundColor="#ffcc33" halign="left" valign="center" transparent="1" zPosition="8" />
+		<widget name="pform" position="230,900" size="1250,50" font="Regular;28" foregroundColor="#ffcc33" halign="left" valign="center" transparent="1" zPosition="8" />
+	</screen>
+
+
+
+
+
+	<screen name="slMessageBox" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
+		<ePixmap position="1,0" size="1920,1080" zPosition="-1" pixmap="/usr/lib/enigma2/python/Plugins/SatLodge/slPanel/res/pics/menu_plug_lsFHD.png" />
+		<widget name="ErrorPixmap" pixmap="skin_default/icons/input_error.png" position="1433,406" size="100,100" alphatest="blend" />
+		<widget name="QuestionPixmap" pixmap="skin_default/icons/input_question.png" position="1437,407" size="100,100" alphatest="blend" />
+		<widget name="InfoPixmap" pixmap="skin_default/icons/input_info.png" position="1436,406" size="100,100" alphatest="blend" />
+		<widget name="WarningPixmap" pixmap="skin_default/icons/input_warning.png" position="1437,404" size="100,100" alphatest="blend" />
+		<widget name="list" position="83,355" size="796,554" font="Regular;28" itemHeight="50" selectionPixmap="/usr/lib/enigma2/python/Plugins/SatLodge/slPanel/res/pics/sel32.png" scrollbarMode="showNever" transparent="1" />
+		<widget name="Text" position="84,217" size="791,514" font="Regular;34" foregroundColor="#ffffff" zPosition="2" />
+		<widget name="text" font="Regular;34" position="86,213" size="800,506" foregroundColor="#fff700" />
+		<widget name="selectedChoice" position="360,157" zPosition="3" size="524,50" font="Regular;32" backgroundColor="#2518252e" transparent="1" foregroundColor="#ffffff" halign="center" />
+<!--   <applet type="onLayoutFinish">
+# this should be factored out into some helper code, but currently demonstrates applets.
+from enigma import eSize, ePoint
+orgwidth = self.instance.size().width()
+orgpos = self.instance.position()
+textsize = self["text"].getSize()
+# y size still must be fixed in font stuff...
+textsize = (textsize[0] + 80, textsize[1] + 80)
+offset = 30
+if self.type == self.TYPE_YESNO:
+offset = 70
+wsizex = textsize[0] + 120
+wsizey = textsize[1] + offset
+if (800 &gt; wsizex):
+wsizex = 800
+wsize = (wsizex, wsizey)
+# resize
+self.instance.resize(eSize(*wsize))
+# resize label
+self["text"].instance.resize(eSize(*textsize))
+# move list
+listsize = (wsizex - 15, 64)
+self["list"].instance.move(ePoint(10, textsize[1]))
+self["list"].instance.resize(eSize(*listsize))
+# center window
+newwidth = wsize[0]
+self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
+</applet> -->
+		<widget name="title" position="472,31" zPosition="3" size="908,66" font="Regular;40" foregroundColor="#ffcc33" backgroundColor="black" transparent="1" halign="center" />
+		<widget name="version" position="1544,36" zPosition="3" size="324,50" font="Regular;30" backgroundColor="background" transparent="1" foregroundColor="#ffffff" halign="right" />
+		<widget name="maintener" position="1379,36" zPosition="3" size="324,50" font="Regular;30" backgroundColor="background" transparent="1" foregroundColor="#ffffff" halign="center" />
+		<widget source="global.CurrentTime" render="Label" position="1558,1010" size="200,50" font="Regular;32" halign="right" backgroundColor="black" foregroundColor="grey" transparent="1">
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="1752,1010" size="100,50" font="Regular;32" halign="right" backgroundColor="black" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+                <eLabel name="DEBUG" text="P-017" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+	</screen>
+	
 	<!-- Volume -->
 	<screen name="Volume" position="center,40" size="1100,80" zPosition="10" title="Volume" backgroundColor="#FF000000" flags="wfNoBorder">
 		<ePixmap position="0,0" size="1100,80" pixmap="oZeta-FHD/icons/volume.png" zPosition="10" />
