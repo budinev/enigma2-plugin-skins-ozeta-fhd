@@ -199,7 +199,6 @@
 		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
 		<widget name="text" position="230,210" size="1250,700" itemHeight="230" foregroundColor="#ffffff" foregroundColorSelected="#ffffff" backgroundColorSelected="barColor" scrollbarMode="showOnDemand" zPosition="2" />
 		<widget name="info" position="230,910" size="1250,50" font="Regular;30" foregroundColor="#7fff00" transparent="1" zPosition="4" />
-                <eLabel name="DEBUG" text="P-001" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -209,7 +208,6 @@
 		<widget name="info"  position="130,90"  size="750,70" font="Regular;30" halign="center" valign="bottom" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1" />
 		<eLabel                                 position="10,170" size="880,20" backgroundColor="#202020" transparent="0" zPosition="0" />
 		<widget name="progress"                 position="10,170" size="880,20" borderWidth="1" borderColor="#cccccc" zPosition="1" />
-                <eLabel name="DEBUG" text="P-002" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 	<screen name="DownloaderImage" flags="wfNoBorder" position="0,0" size="1920,1080" title="..::SatLodge Panel Addon Manager::.." backgroundColor="#ffffffff" zPosition="-1" transparent="0">
@@ -219,7 +217,6 @@
 		<widget name="menu" position="230,210" size="1250,700" foregroundColor="#ffffff" foregroundColorSelected="#fffff" backgroundColorSelected="barColor" scrollbarMode="showOnDemand" scrollbarWidth="10" zPosition="2" />
 		<widget name="info" position="230,910" size="1250,50" font="Regular;30" foregroundColor="#7fff00" transparent="1" zPosition="4" />
 		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
-                <eLabel name="DEBUG" text="P-003" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -240,7 +237,6 @@
 		</widget>
 		<eLabel position="center,235" zPosition="4" size="1920,34" halign="center" font="Regular;32" transparent="1" foregroundColor="#ffff00" backgroundColor="#41000000" text="Press EXIT to return to previous page," />
 		<eLabel position="center,265" zPosition="4" size="1920,34" halign="center" font="Regular;32" transparent="1" foregroundColor="#ffff00" backgroundColor="#41000000" text="   without to cancel the download !" />		
-                <eLabel name="DEBUG" text="P-004" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -251,7 +247,6 @@
 		<widget name="list" position="230,210" size="1250,700" foregroundColor="#ffffff" foregroundColorSelected="#fffff" backgroundColorSelected="barColor" scrollbarMode="showOnDemand" transparent="1" scrollbarWidth="10" zPosition="2" />
 		<widget name="info" position="230,910" size="1250,50" font="Regular;30" foregroundColor="#7fff00" transparent="1" zPosition="4" />
 		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
-                <eLabel name="DEBUG" text="P-005" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -261,7 +256,6 @@
 		<panel name="cvRGYB"/>
 		<widget name="text" position="230,150" size="810,800" itemHeight="40" foregroundColor="#ffffff" foregroundColorSelected="#ffffff" backgroundColorSelected="barColor" 
 			scrollbarMode="showOnDemand" scrollbarWidth="10" transparent="1" zPosition="2" />
-                <eLabel name="DEBUG" text="P-006" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="1" zPosition="1000" />
 	</screen>
 
 
@@ -295,7 +289,7 @@
 		<widget source="targettext"   render="Label" position="230,700" size="800,100" valign="center" halign="center"  font="Regular;28" transparent="1" zPosition="3" foregroundColor="#ffff00" />
 		<widget name="target"                        position="230,800" size="800,100" valign="center" halign="center"  font="Regular;28" transparent="1" zPosition="4" />
 		<widget source="downloadtext" render="Label" position="230,900" size="1000,100" valign="center" halign="center" font="Regular;28" transparent="1" zPosition="3" foregroundColor="#ff6a6a" />
-                <eLabel name="DEBUG" text="P-007" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
+                <eLabel name="DEBUG" text="" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 	
@@ -308,7 +302,6 @@
 		<widget name="menu" position="230,220" size="1250,640" foregroundColor="#ffffff" itemHeight="40" foregroundColorSelected="#ffffff" backgroundColorSelected="barColor" scrollbarMode="showOnDemand" scrollbarWidth="10" zPosition="2" />
 		<widget name="info" position="230,910" size="1250,50" font="Regular;30" foregroundColor="#7fff00" transparent="1" zPosition="4" />
 		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
-                <eLabel name="DEBUG" text="P-008" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -321,7 +314,6 @@
 		<widget source="text" render="Label" position="230,680" size="1250,100" valign="center" halign="center" font="Regular;36" transparent="1" zPosition="3" foregroundColor="#ffff00" />
 		<widget name="target" position="230,780" size="1250,100" valign="center" halign="center" font="Regular;36" transparent="1" zPosition="4" />
 		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
-                <eLabel name="DEBUG" text="P-009" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -332,7 +324,6 @@
 		<widget name="info" position="230,830" zPosition="4" size="1250,60" font="Regular;32" foregroundColor="#7fff00" transparent="1" />
 		<widget source="progress" render="Progress"  position="230,910" size="700,40" transparent="1" borderWidth="0" zPosition="1" />
 		<widget source="progresstext" render="Label" position="240,910" size="700,40" font="Regular;30" halign="right" transparent="1" foregroundColor="#00cc99" backgroundColor="#000000" zPosition="2" />
-                <eLabel name="DEBUG" text="P-0010" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -349,7 +340,6 @@
 			<convert type="StringList" />
 		</widget>
 		<widget name="info" halign="left" position="230,700" zPosition="3" size="900,50" font="Regular;32" foregroundColor="#ffffff" transparent="1" />
-                <eLabel name="DEBUG" text="P-011" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="" zPosition="1000" />
 	</screen>
 
 
@@ -360,7 +350,6 @@
 		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
 		<widget name="list" position="230,220" size="1250,640" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" backgroundColorSelected="#b8b8b8" scrollbarMode="showOnDemand" transparent="1" scrollbarWidth="10" zPosition="2" />  
 		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
-                <eLabel name="DEBUG" text="P-012" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -371,7 +360,6 @@
 		<eLabel position="230,210" size="1250,3" backgroundColor="#202020" />
 		<widget name="list" position="230,220" size="1250,640" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" backgroundColorSelected="#b8b8b8" scrollbarMode="showOnDemand" transparent="1" scrollbarWidth="10" zPosition="2" />  
 		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
-                <eLabel name="DEBUG" text="P-013" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -382,7 +370,6 @@
 		<widget name="text" position="230,220" size="1250,640" font="Regular;28" foregroundColor="#ffffff" zPosition="2" />  
 		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
 		<ePixmap position="230,980" size="500,90" pixmap="oZeta-FHD/picmenu/bLogo.png" alphatest="blend" zPosition="1" />
-                <eLabel name="DEBUG" text="P-014" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -394,7 +381,6 @@
 		<widget name="config" position="230,220" size="1250,500" itemHeight="50" font="Regular;36" foregroundColor="white" transparent="1" zPosition="3" />
 		<widget name="info"   position="230,790" size="1250,80" font="Regular;30" foregroundColor="#7fff00" backgroundColor="black" transparent="1" halign="center" zPosition="3" />
 		<widget name="version" position="900,910" zPosition="3" size="350,24" font="Regular;18" backgroundColor="#000000" transparent="1" foregroundColor="yellow" halign="right" />
-                <eLabel name="DEBUG" text="P-015" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 
 
@@ -404,7 +390,6 @@
 		<panel name="cRG"/>
 		<widget name="list" position="230,150" size="810,640" foregroundColor="#ffffff" foregroundColorSelected="#0000ff" itemHeight="40" backgroundColorSelected="#b8b8b8" scrollbarMode="showOnDemand" 
 			scrollbarWidth="10" transparent="1" zPosition="2" />
-                <eLabel name="DEBUG" text="P-016" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="1" zPosition="1000" />
 	</screen>
 
 
@@ -535,7 +520,6 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
 		<widget source="global.CurrentTime" render="Label" position="1752,1010" size="100,50" font="Regular;32" halign="right" backgroundColor="black" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
-                <eLabel name="DEBUG" text="P-017" position="40,25" size="500,50" font="Regular;40" foregroundColor="#BC0004" backgroundColor="#FFFFFF" transparent="0" zPosition="1000" />
 	</screen>
 	
 	<!-- Volume -->
