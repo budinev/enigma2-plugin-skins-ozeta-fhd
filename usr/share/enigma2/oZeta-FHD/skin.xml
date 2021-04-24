@@ -2345,8 +2345,8 @@ self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth)/2, orgpos.y()))
 		<widget name="list" position="780,50" size="1090,675" scrollbarMode="showOnDemand" scrollbarWidth="10"  transparent="1" zPosition="3" itemHeight="45" itemWidth="1090"		
 			serviceItemHeight="45" serviceNumberFont="Regular;27" serviceNameFont="Regular;30" serviceInfoFont="Regular;27" progressPercentWidth="70"
 			foregroundColor="#ffffff" foregroundColorSelected="ltbluette" backgroundColor="#000000" additionalInfoFont="Regular;27" colorAdditionalInfo="#808080" 
-			colorServiceDescription="ltbluette" colorServiceDescriptionSelected="white" foregroundColorServiceNotAvail="#505050" fieldMargins="15" nonplayableMargins="15" itemsDistances="8"
-			colorEventProgressbarBorder="grey" colorEventProgressbarBorderSelected="white" picServiceEventProgressbar="skin_default/progcl.png" backgroundColorSelected="#124b97"/>
+			colorServiceDescription="#7fff00" colorServiceDescriptionSelected="white" foregroundColorServiceNotAvail="#505050" fieldMargins="15" nonplayableMargins="15" itemsDistances="8"
+			colorEventProgressbarBorder="grey" colorEventProgressbarBorderSelected="white" picServiceEventProgressbar="skin_default/progcl.png" backgroundColorSelected="#202020"/>
 		<!-- Service -->
 		<!-- TUNER BAR -->
 		<eLabel text="Tun:" position="1590,875" size="120,40" font="Regular;28" backgroundColor="#000000" foregroundColor="#ffffff" transparent="1" zPosition="3" />
