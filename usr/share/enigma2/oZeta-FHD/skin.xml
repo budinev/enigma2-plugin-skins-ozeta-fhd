@@ -509,7 +509,7 @@ self["list"].instance.move(ePoint(10, textsize[1]))
 self["list"].instance.resize(eSize(*listsize))
 # center window
 newwidth = wsize[0]
-self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + (orgheight - wsizey) // 2))
+self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y()))
 </applet> -->
 		<widget name="title" position="472,31" zPosition="3" size="908,66" font="Regular;40" foregroundColor="#ffcc33" backgroundColor="black" transparent="1" halign="center" />
 		<widget name="version" position="1544,36" zPosition="3" size="324,50" font="Regular;30" backgroundColor="background" transparent="1" foregroundColor="#ffffff" halign="right" />
@@ -3540,7 +3540,7 @@ self["list"].instance.move(ePoint(10, textsize[1]))
 self["list"].instance.resize(eSize(*listsize))
 # center window
 newwidth = wsize[0]
-self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y() + (orgheight - wsizey) // 2))
+self.instance.move(ePoint(orgpos.x() + (orgwidth - newwidth) // 2, orgpos.y()))
 			</applet>
 	</screen>
 
