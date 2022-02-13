@@ -3633,7 +3633,7 @@ self["list"].instance.move(ePoint(10,textsize[1]))
 self["list"].instance.resize(eSize(*listsize))#200d1940
 # center window
 newwidth=wsize[0]
-self.instance.move(ePoint((1920-wsizex)/2,(1080-wsizey)/2))
+self.instance.move(ePoint((1920-wsizex) // 2,(1080-wsizey)/2))
 	</applet>
 	</screen>
 </skin>
